@@ -3,10 +3,10 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - main
+      - custom/main
   pull_request:
     branches:
-      - main
+      - custom/main
     types: [closed]
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: asternic/wuzapi
+          images: devlucasmoraes/wuzapi
           tags: |
             type=raw,value=latest
             type=sha,format=short
